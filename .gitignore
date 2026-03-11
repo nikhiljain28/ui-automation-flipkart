@@ -1,0 +1,19 @@
+# Maven
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Test Reports
+test-output/
+allure-results/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
