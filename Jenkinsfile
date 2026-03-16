@@ -31,7 +31,7 @@ pipeline {
 
         stage('Publish Report') {
             steps {
-                echo '📊 Publishing Extent Report...'
+                echo 'Publishing Extent Report...'
                 publishHTML(target: [
                     allowMissing         : false,
                     alwaysLinkToLastBuild: true,
