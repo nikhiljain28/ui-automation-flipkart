@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 
 
-public class UiAutomation {
+public class FlipKart_Page_Validations {
 	
 	public static WebDriver driver;
 	public static WebDriverWait mywait;
