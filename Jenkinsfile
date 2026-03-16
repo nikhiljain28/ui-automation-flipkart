@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Cloning repository...'
                 git branch: 'main',
-                    url: 'https://github.com/your-username/your-repo.git'
+                    url: 'https://github.com/nikhiljain28/ui-automation-flipkart.git'
             }
         }
 
