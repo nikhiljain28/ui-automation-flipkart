@@ -13,12 +13,15 @@ import org.testng.annotations.DataProvider;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import pojo.RequestPojo;
+import utils.CustomLoggingFilter;
 import utils.EmailUtil;
 import utils.ExcelDataReader;
 import utils.ExtentReportManager;
 import utils.LogUtil;
+import utils.ResponseTimeFIlter;
 
 public class DataProviderforAPIS {
 	
@@ -30,6 +33,10 @@ public class DataProviderforAPIS {
 	@BeforeSuite
     public void setUpReport() {
         extent = ExtentReportManager.getInstance();
+        RestAssured.filters(
+                new CustomLoggingFilter(),
+                new ResponseTimeFIlter()
+            );
     }
 
     @AfterMethod

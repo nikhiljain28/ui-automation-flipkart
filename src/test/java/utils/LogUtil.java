@@ -46,7 +46,7 @@ public class LogUtil {
 			writer.newLine();
 			writer.write("RESPONSE BODY : ");
 			writer.newLine();
-			writer.write(response.asPrettyString());   // ✅ full response body
+			writer.write(response.asPrettyString());   // full response body
 			writer.newLine();
 			writer.write("====================================");
 			writer.close();
