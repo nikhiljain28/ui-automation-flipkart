@@ -85,7 +85,12 @@ public class APITesting extends DataProviderforAPIS {
 		assertNotNull(user.getEmail(),     "email should not be null");
 		assertNotNull(user.getPhone(),     "phone should not be null");
 		assertNotNull(user.getId(), "id should not be null");
-		
 	}
 
+	@Test(dataProvider = "userNameData")
+	public static void checkingValues(String username) {
+		String response = Users_EndPoints.getUser(username).getBody().asPrettyString();
+		JsonPath jsonPath = new JsonPath(response);
+		
+	}
 }

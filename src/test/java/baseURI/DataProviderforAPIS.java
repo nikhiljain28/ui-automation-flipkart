@@ -31,7 +31,7 @@ public class DataProviderforAPIS {
 
 	
 	@BeforeSuite
-    public void setUpReport() {
+    public void setUpMethod() {
         extent = ExtentReportManager.getInstance();
         RestAssured.filters(
                 new CustomLoggingFilter(),
@@ -101,13 +101,9 @@ public class DataProviderforAPIS {
         List<RequestPojo> users = ExcelDataReader.getUserData(
             filePath, "UserTestData"
         );
-        List<String>userName = new ArrayList<>(users.size());
-        for(int i=0;i<users.size();i++) {
-        	userName.add(users.get(i).getUsername());
-        }
-        Object[][] data = new Object[userName.size()][1];
-        for (int i = 0; i < userName.size(); i++) {
-            data[i][0] = userName.get(i);   // Each row = one RequestPojo object
+        Object[][] data = new Object[users.size()][1];
+        for (int i = 0; i < users.size(); i++) {
+            data[i][0] = users.get(i).getUsername();   // Each row = one RequestPojo object
         }
         return data;
     }
